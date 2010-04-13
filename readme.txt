@@ -1,7 +1,7 @@
 === Twitter Highlight ===
 Contributors: oso96_2000
-Donate link: http://osiux.ws
-Tags: twitter, hashtag, list, username
+Donate link: http://pledgie.com/campaigns/10024
+Tags: twitter
 Requires at least: 2.9
 Tested up to: 2.9
 Stable tag: 1.0
