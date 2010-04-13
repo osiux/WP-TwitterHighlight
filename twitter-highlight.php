@@ -5,7 +5,7 @@ Plugin URI: http://osiux.ws
 Description: Convert twitter usernames, hashtags and lists in pages, posts or comments to a twitter link.
 Version: 1.0
 Author: oso96_2000
-Author URI: http://www.osiux.ws
+Author URI: http://osiux.ws
 */
 
 // Initialize plugin
