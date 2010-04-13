@@ -63,7 +63,7 @@ class TwitterHighlight {
 
     // Delete options on uninstall
     public function uninstall() {
-        delete_options('twitterhl_options');
+        delete_option('twitterhl_options');
     }
 
     // Wrapper function to make highlight in comments
