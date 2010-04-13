@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Twitter Highlight
-Plugin URI: http://osiux.ws/2010/04/12/twitter-highlight/
+Plugin URI: http://osiux.ws/2010/04/13/twitter-highlight/
 Description: Convert twitter usernames, hashtags and lists in pages, posts or comments to a twitter link.
 Version: 1.0
 Author: oso96_2000
