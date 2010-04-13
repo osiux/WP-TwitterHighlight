@@ -49,6 +49,7 @@ class TwitterHighlight {
         }
     }
 
+    // When installed, put some default options
     public function install() {
         $options = array('inpost'       =>  true,
                          'inpage'       =>  true,
@@ -60,6 +61,7 @@ class TwitterHighlight {
         update_option('twitterhl_options', $options);
     }
 
+    // Delete options on uninstall
     public function uninstall() {
         delete_options('twitterhl_options');
     }
