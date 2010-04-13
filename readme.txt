@@ -1,7 +1,7 @@
-=== Plugin Name ===
-Contributors: Twitter Highlight
+=== Twitter Highlight ===
+Contributors: oso96_2000
 Donate link: http://osiux.ws
-Tags: twitter
+Tags: twitter, hashtag, list, username
 Requires at least: 2.9
 Tested up to: 2.9
 Stable tag: 1.0
