@@ -16,7 +16,7 @@ Convert the following formats:
 @username/listname -> http://twitter.com/username/listname
 #hashtag -> http://search.twitter.com/search?q=%23hashtag
 
-It allow to specify if you want to use secure urls (https), no follow attribute, display username info on a tooltip and some more features.
+It comes with some options to configure, like use nofollow attribute, open on a new page and choose where you want the links to be replaced.
 
 == Installation ==
 
