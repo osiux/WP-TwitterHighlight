@@ -3,8 +3,10 @@ Contributors: oso96_2000
 Donate link: http://pledgie.com/campaigns/10024
 Tags: twitter, hashtag, list, username
 Requires at least: 2.9
-Tested up to: 2.9
-Stable tag: 1.0
+Tested up to: 3.4
+Stable tag: 1.1
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Convert twitter usernames, hashtags and lists in pages, posts or comments to a twitter link.
 
@@ -28,3 +30,6 @@ It comes with some options to configure, like use nofollow attribute, open on a 
 
 = 1.0 =
 * First version.
+
+= 1.1 =
+* Options display style changed a little

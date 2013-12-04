@@ -1,11 +1,12 @@
 <?php
 /*
-Plugin Name: Twitter Highlight
-Plugin URI: http://osiux.ws/2010/04/13/twitter-highlight/
-Description: Convert twitter usernames, hashtags and lists in pages, posts or comments to a twitter link.
-Version: 1.0
-Author: oso96_2000
-Author URI: http://osiux.ws
+ * Plugin Name: Twitter Highlight
+ * Plugin URI: http://osiux.ws/2010/04/13/twitter-highlight/
+ * Description: Convert twitter usernames, hashtags and lists in pages, posts or comments to a twitter link.
+ * Version: 1.1
+ * Author: Eduardo Reveles
+ * Author URI: http://osiux.ws
+ * Text-Domain: twitter-highlight
 */
 
 // Initialize plugin
@@ -89,9 +90,9 @@ class TwitterHighlight {
         $attr .= (bool) $options['newpage'] ? ' target="_blank"' : '' ;
 
         // Do the magic
-        $content = preg_replace("/\B@(\w+(?!\/))\b/i", '<a href="http://twitter.com/\\1"'.$attr.'>@\\1</a>', $content); // Username
-        $content = preg_replace("/\B(?<![=\/])#([\w]+[a-z]+([0-9]+)?)/i", '<a href="http://twitter.com/search?q=%23\\1"'.$attr.'>#\\1</a>', $content); // Hashtag
-        $content = preg_replace("/\B@([\w]+\/[\w]+)/i", '<a href="http://twitter.com/\\1"'.$attr.'>@\\1</a>', $content); // List
+        $content = preg_replace("/\B@(\w+(?!\/))\b/i", '<a href="https://twitter.com/\\1"'.$attr.'>@\\1</a>', $content); // Username
+        $content = preg_replace("/\B(?<![=\/])#([\w]+[a-z]+([0-9]+)?)/i", '<a href="https://twitter.com/search?q=%23\\1"'.$attr.'>#\\1</a>', $content); // Hashtag
+        $content = preg_replace("/\B@([\w]+\/[\w]+)/i", '<a href="https://twitter.com/\\1"'.$attr.'>@\\1</a>', $content); // List
 
         return $content;
     }
@@ -119,6 +120,7 @@ class TwitterHighlight {
         $options = get_option('twitterhl_options');
         ?>
         <div class="wrap">
+            <div id="icon-options-general" class="icon32"><br></div>
             <h2><?php echo __('Twitter Highlight Settings', 'twitter-highlight'); ?></h2>
             <form name="settings" method="post" action="options.php">
                 <?php settings_fields('twitterhl-options'); ?>
@@ -135,23 +137,33 @@ class TwitterHighlight {
                 <h3>Replace options</h3>
                 <p><?php echo __('You can choose where in your blog you want the plugin to replace links.', 'twitter-highlight'); ?></p>
                 <table class="form-table">
-                    <tr valign="top">
+                    <tr>
+                        <th scope="row">
+                            Replace in:
+                        </th>
                         <td>
-                            <label for="inpost"><?php echo __('In posts:', 'twitter-highlight'); ?></label>
-                            <input name="twitterhl_options[inpost]" type="checkbox" id="inpost" value="1"<?php checked('1', $options['inpost']); ?> />
-                        </td>
-                        <td>
-                            <label for="inpage"><?php echo __('In pages:', 'twitter-highlight'); ?></label>
-                            <input name="twitterhl_options[inpage]" type="checkbox" id="inpage" value="1"<?php checked('1', $options['inpage']); ?> />
-                        </td>
-                        <td>
-                            <label for="incomment"><?php echo __('In comments:', 'twitter-highlight'); ?>
-                            </label><input name="twitterhl_options[incomment]" type="checkbox" id="incomment" value="1"<?php checked('1', $options['incomment']); ?> />
-                        </td>
-                        </td>
-                        <td>
-                            <label for="inrss"><?php echo __('In RSS Feed:', 'twitter-highlight'); ?>
-                            </label><input name="twitterhl_options[inrss]" type="checkbox" id="inrss" value="1"<?php checked('1', $options['inrss']); ?> />
+                            <fieldset>
+                                <legend class="screen-reader-text"><span>Replace in</span></legend>
+                            </fieldset>
+                            <label for="inpost">
+                                <input name="twitterhl_options[inpost]" type="checkbox" id="inpost" value="1"<?php checked('1', $options['inpost']); ?> />
+                                <?php echo __('Posts', 'twitter-highlight'); ?>
+                            </label>
+                            <br>
+                            <label for="inpage">
+                                <input name="twitterhl_options[inpage]" type="checkbox" id="inpage" value="1"<?php checked('1', $options['inpage']); ?> />
+                                <?php echo __('Pages', 'twitter-highlight'); ?>
+                            </label>
+                            <br>
+                            <label for="incomment">
+                                <input name="twitterhl_options[incomment]" type="checkbox" id="incomment" value="1"<?php checked('1', $options['incomment']); ?> />
+                                <?php echo __('Comments', 'twitter-highlight'); ?>
+                            </label>
+                            <br>
+                            <label for="inrss">
+                                <input name="twitterhl_options[inrss]" type="checkbox" id="inrss" value="1"<?php checked('1', $options['inrss']); ?> />
+                                <?php echo __('RSS Feed', 'twitter-highlight'); ?>
+                            </label>
                         </td>
                     </tr>
                 </table>
