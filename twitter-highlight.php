@@ -90,9 +90,9 @@ class TwitterHighlight {
         $attr .= (bool) $options['newpage'] ? ' target="_blank"' : '' ;
 
         // Do the magic
-        $content = preg_replace("/\B@(\w+(?!\/))\b/i", '<a href="https://twitter.com/\\1"'.$attr.'>@\\1</a>', $content); // Username
-        $content = preg_replace("/\B(?<![=\/])#([\w]+[a-z]+([0-9]+)?)/i", '<a href="https://twitter.com/search?q=%23\\1"'.$attr.'>#\\1</a>', $content); // Hashtag
-        $content = preg_replace("/\B@([\w]+\/[\w]+)/i", '<a href="https://twitter.com/\\1"'.$attr.'>@\\1</a>', $content); // List
+        $content = preg_replace("/\B@(\w+(?!\/))\b/i", '<a href="https://twitter.com/\\1"'.$attr.'>&commat;\\1</a>', $content); // Username
+        $content = preg_replace("/\B(?<![=\/])#([\w]+[a-z]+([0-9]+)?)(?![^<]*>)/i", '<a href="https://twitter.com/search?q=%23\\1"'.$attr.'>#\\1</a>', $content); // Hashtag
+        $content = preg_replace("/\B@([\w]+\/[\w]+)(?![^<]*>)/i", '<a href="https://twitter.com/\\1"'.$attr.'>&commat;\\1</a>', $content); // List
 
         return $content;
     }
